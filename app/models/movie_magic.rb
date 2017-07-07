@@ -1,8 +1,8 @@
 require 'net/http'
 require 'json'
 
-def format_url(genre_id)
-    url = "https://api.themoviedb.org/3/discover/movie?with_genres=#{genre_id}&sort_by=popularity.desc?&api_key=8cd641fe58ace9a3561002f6a4a0a852"
+def format_url(genre_id, search_term)
+    url = "https://api.themoviedb.org/3/discover/movie?with_genres=#{genre_id}&sort_by=popularity.desc#{search_term}?&api_key=8cd641fe58ace9a3561002f6a4a0a852"
     return url
 end
 
@@ -17,7 +17,7 @@ def call_moviedb(url)
     titles = []
     
     formatted_data["results"].map do |movie|
-        titles.push( movie["title"])
+        titles.push([movie["title"], movie["poster_path"], movie["overview"]])
     end
     return titles
 end

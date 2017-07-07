@@ -13,7 +13,8 @@ class ApplicationController < Sinatra::Base
   
   post '/results' do
     genre_id = params[:genre_selection]
-    url = format_url(genre_id)
+    search_term = params[:search_term]
+    url = format_url(genre_id, search_term)
     @movie_list = call_moviedb(url)
     # return @movie_list
     erb :results

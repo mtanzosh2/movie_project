@@ -17,3 +17,7 @@ h1 {
 ul {
     text-align: left;
 }
+
+.card {
+    margin-top: 10px;
+}
