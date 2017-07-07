@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    margin-top: 50px !important;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
+.landing {
+    background-image: url("../images/lloyd-dirks-74271.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+ul {
+    text-align: left;
+}
